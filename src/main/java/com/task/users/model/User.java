@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.PostPersist;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
@@ -21,7 +22,9 @@ import static jakarta.persistence.GenerationType.SEQUENCE;
 import jakarta.persistence.Column;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Entity(name = "User")
 @Table(name = "users", uniqueConstraints = {
                 @UniqueConstraint(name = "user_email_unique", columnNames = "email")
@@ -57,6 +60,11 @@ public class User {
                 this.username = username;
                 this.email = email;
                 this.password = password;
+        }
+
+        @PostPersist
+        public void logCreation() {
+                log.info("Creating entity: " + this);
         }
 
 }
