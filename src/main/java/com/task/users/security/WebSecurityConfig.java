@@ -97,6 +97,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
                         .requestMatchers(HttpMethod.PATCH, "/api/users/**").hasAnyRole("MODERATOR", "ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/users/**").hasAnyRole("ADMIN")
                         .requestMatchers("/api/test/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         .anyRequest().authenticated());
 
         http.authenticationProvider(authenticationProvider());
