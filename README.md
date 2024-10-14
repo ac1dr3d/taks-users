@@ -16,8 +16,8 @@ This project is a demo microservice for managing user-related operations. It's b
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/ac1dr3d/taks-users.git
-    cd taks-users
+    git clone https://github.com/ac1dr3d/task-users.git
+    cd task-users
     ```
 
 2. Build the application:
