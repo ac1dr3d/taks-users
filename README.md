@@ -1,4 +1,4 @@
-# Taks Users Microservice
+# Task Users Microservice
 
 This project is a demo microservice for managing user-related operations. It's built using Java and Spring Boot, and integrates with a Kafka message broker for handling asynchronous messaging between services.
 
