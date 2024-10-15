@@ -49,3 +49,29 @@ You can modify the `application.properties` file for custom Kafka configurations
 
 ```properties
 spring.kafka.bootstrap-servers=localhost:29092
+```
+
+## Usage
+
+Create account using endpoint
+
+```properties
+/api/auth/signup
+```
+
+e.g.
+```json
+{
+  "username":"abc",
+  "email":"abc@def.com",
+  "password":"123"
+}
+```
+
+Get token with credentials
+
+```properties
+/api/auth/signin
+```
+
+Use token to make requests
